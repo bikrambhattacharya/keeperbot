@@ -30,10 +30,10 @@ module.exports = (robot) => {
   robot.enter(res => {
     // Get the room name from the provided room ID
     const room = robot.adapter.client.rtm.dataStore.getChannelGroupOrDMById(res.message.room)
-    const user = res.message.user.name
+    const userId = res.message.user.id
 
     if (room.name !== 'general') return
 
-    introMessages.map(m => robot.messageRoom(user, m))
+    introMessages.map(m => robot.messageRoom(userId, m))
   })
 }
