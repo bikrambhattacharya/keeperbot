@@ -32,7 +32,7 @@ module.exports = (robot) => {
     const room = robot.adapter.client.rtm.dataStore.getChannelGroupOrDMById(res.message.room)
     const user = res.message.user.name
 
-    if (room.name !== '#general') return
+    if (room.name !== 'general') return
 
     introMessages.map(m => robot.messageRoom(user, m))
   })
