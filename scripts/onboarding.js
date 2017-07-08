@@ -1,9 +1,6 @@
 /**
  * Description:
  *   Sends useful information to new Open Wichita Slack members.
- *
- * Commands:
- *   none
  */
 
 const introMessages = [
