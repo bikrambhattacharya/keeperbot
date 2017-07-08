@@ -28,9 +28,9 @@ module.exports = (robot) => {
    * When someone enters the room, send them each of the intro messages.
    */
   robot.enter(res => {
-    console.log(res)
-    if (res.message.user.room !== 'general') return
-    const user = res.message.user.name
+    // Slack adapter uses channel ID's, 'C04SLS2SU' === '#general'
+    if (res.evelope.room !== 'C04SLS2SU') return
+    const user = res.evelope.user.name
     introMessages.map(m => robot.messageRom(user, m))
   })
 }
