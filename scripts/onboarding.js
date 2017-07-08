@@ -31,6 +31,6 @@ module.exports = (robot) => {
     // Slack adapter uses channel ID's, 'C04SLS2SU' === '#general'
     if (res.envelope.room !== 'C04SLS2SU') return
     const user = res.envelope.user.name
-    introMessages.map(m => robot.messageRom(user, m))
+    introMessages.map(m => robot.messageRoom(user, m))
   })
 }
