@@ -27,9 +27,10 @@ module.exports = (robot) => {
   /**
    * When someone enters the room, send them each of the intro messages.
    */
-  robot.enter(event => {
-    if (event.message.user.room !== 'general') return
-    const user = event.message.user.name
+  robot.enter(res => {
+    console.log(res)
+    if (res.message.user.room !== 'general') return
+    const user = res.message.user.name
     introMessages.map(m => robot.messageRom(user, m))
   })
 }
